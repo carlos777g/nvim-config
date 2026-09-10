@@ -1,0 +1,63 @@
+snippet class "CSS class selector" b
+.${1:className} {
+	${2:/* Styles */}
+}
+endsnippet
+
+snippet id "CSS ID selector" b
+#${1:idName} {
+	${2:/* Styles */}
+}
+endsnippet
+
+snippet flex "Flexbox container" b
+display: flex;
+justify-content: ${1:center};
+align-items: ${2:center};
+$0
+endsnippet
+
+snippet grid "CSS Grid container" b
+display: grid;
+grid-template-columns: ${1:repeat(auto-fit, minmax(250px, 1fr))};
+gap: ${2:1rem};
+$0
+endsnippet
+
+snippet media "Media query" b
+@media (max-width: ${1:768px}) {
+	${2:/* Mobile styles */}
+}
+endsnippet
+
+snippet transition "CSS transition" b
+transition: ${1:all} ${2:0.3s} ${3:ease-in-out};
+endsnippet
+
+snippet font "Font family" b
+font-family: '${1:Font Name}', ${2:sans-serif};
+endsnippet
+
+snippet color "Color property" b
+color: ${1:#000};
+endsnippet
+
+snippet bg "Background property" b
+background: ${1:#fff};
+endsnippet
+
+snippet border "Border property" b
+border: ${1:1px} solid ${2:#000};
+endsnippet
+
+snippet shadow "Box shadow" b
+box-shadow: ${1:0 2px 8px rgba(0, 0, 0, 0.1)};
+endsnippet
+
+snippet margin "Margin shorthand" b
+margin: ${1:0};
+endsnippet
+
+snippet padding "Padding shorthand" b
+padding: ${1:0};
+endsnippet

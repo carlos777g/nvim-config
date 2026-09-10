@@ -1,0 +1,86 @@
+snippet interface "TypeScript Interface" b
+interface ${1:InterfaceName} {
+	${2:property}: ${3:type};
+}
+endsnippet
+
+snippet type "TypeScript Type" b
+type ${1:TypeName} = {
+	${2:property}: ${3:type};
+};
+endsnippet
+
+snippet enum "TypeScript Enum" b
+enum ${1:EnumName} {
+	${2:VALUE1} = '${3:value1}',
+	${4:VALUE2} = '${5:value2}',
+}
+endsnippet
+
+snippet class "TypeScript Class" b
+class ${1:ClassName} {
+	constructor(${2:params}: ${3:types}) {
+		${4:// Constructor}
+	}
+
+	${5:method}(): ${6:returnType} {
+		${7:// Method body}
+	}
+}
+endsnippet
+
+snippet imp "Import statement" b
+import ${1:name} from '${2:module}';
+endsnippet
+
+snippet impa "Import as statement" b
+import ${1:name} as ${2:alias} from '${3:module}';
+endsnippet
+
+snippet impd "Import destructured" b
+import { ${1:name} } from '${2:module}';
+endsnippet
+
+snippet exp "Export default" b
+export default ${1:name};
+endsnippet
+
+snippet expe "Export named" b
+export { ${1:name} };
+endsnippet
+
+snippet const "Const declaration" b
+const ${1:name}: ${2:type} = ${3:value};
+endsnippet
+
+snippet func "Function declaration" b
+function ${1:name}(${2:params}: ${3:types}): ${4:returnType} {
+	${5:// Function body}
+}
+endsnippet
+
+snippet arr "Arrow function" b
+const ${1:name} = (${2:params}: ${3:types}): ${4:returnType} => {
+	${5:// Function body}
+};
+endsnippet
+
+snippet async "Async function" b
+async function ${1:name}(${2:params}: ${3:types}): Promise<${4:returnType}> {
+	${5:// Function body}
+}
+endsnippet
+
+snippet asyncarr "Async arrow function" b
+const ${1:name} = async (${2:params}: ${3:types}): Promise<${4:returnType}> => {
+	${5:// Function body}
+};
+endsnippet
+
+snippet try "Try-catch block" b
+try {
+	${1:// Code}
+} catch (error) {
+	${2:// Error handling}
+}
+endsnippet

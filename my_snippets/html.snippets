@@ -1,0 +1,71 @@
+snippet html5 "HTML5 basic template" b
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>${1:Page Title}</title>
+	<style>
+		${2:/* Your CSS here */}
+	</style>
+</head>
+<body>
+	${3:<h1>Welcome</h1>}
+	<script>
+		${4:// Your JavaScript here}
+	</script>
+</body>
+</html>
+endsnippet
+
+snippet html:5 "HTML5 basic template" b
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>${1:Page Title}</title>
+	<style>
+		${2:/* Your CSS here */}
+	</style>
+</head>
+<body>
+	${3:<h1>Welcome</h1>}
+	<script>
+		${4:// Your JavaScript here}
+	</script>
+</body>
+</html>
+endsnippet
+
+snippet doc "HTML document structure" b
+<!DOCTYPE html>
+<html>
+<head>
+	<title>${1:Title}</title>
+</head>
+<body>
+	$0
+</body>
+</html>
+endsnippet
+
+snippet div "Div with class" w
+<div class="${1:container}">
+	$0
+</div>
+endsnippet
+
+snippet input "Input element" w
+<input type="${1:text}" class="${2:}" placeholder="${3:}" />$0
+endsnippet
+
+snippet btn "Button element" w
+<button class="${1:btn}">${2:Click me}</button>$0
+endsnippet
+
+snippet form "Form element" b
+<form action="${1:#}" method="${2:POST}">
+	$0
+</form>
+endsnippet

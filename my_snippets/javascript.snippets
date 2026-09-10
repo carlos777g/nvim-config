@@ -1,0 +1,82 @@
+snippet rfc "React Functional Component" b
+export default function ${1:ComponentName}() {
+	return (
+		<div>
+			${2:<h1>Component</h1>}
+		</div>
+	);
+}
+endsnippet
+
+snippet rafc "React Arrow Function Component" b
+const ${1:ComponentName} = () => {
+	return (
+		<div>
+			${2:<h1>Component</h1>}
+		</div>
+	);
+};
+
+export default ${1:ComponentName};
+endsnippet
+
+snippet usestate "useState hook" b
+const [${1:state}, set${1/(.)/\U$1/}] = useState(${2:initialValue});
+endsnippet
+
+snippet useeffect "useEffect hook" b
+useEffect(() => {
+	${1:// Effect code}
+}, [${2:dependencies}]);
+endsnippet
+
+snippet rcc "React Class Component" b
+import React from 'react';
+
+class ${1:ComponentName} extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			${2:prop: value}
+		};
+	}
+
+	render() {
+		return (
+			<div>
+				${3:<h1>Component</h1>}
+			</div>
+		);
+	}
+}
+
+export default ${1:ComponentName};
+endsnippet
+
+snippet imp "Import statement" b
+import ${1:name} from '${2:module}';
+endsnippet
+
+snippet impa "Import as statement" b
+import ${1:name} as ${2:alias} from '${3:module}';
+endsnippet
+
+snippet exp "Export default" b
+export default ${1:name};
+endsnippet
+
+snippet const "Const declaration" b
+const ${1:name} = ${2:value};
+endsnippet
+
+snippet func "Function declaration" b
+function ${1:name}(${2:params}) {
+	${3:// Function body}
+}
+endsnippet
+
+snippet arr "Arrow function" b
+const ${1:name} = (${2:params}) => {
+	${3:// Function body}
+};
+endsnippet

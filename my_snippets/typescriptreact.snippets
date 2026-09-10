@@ -1,0 +1,79 @@
+snippet rfc "React Functional Component (TS)" b
+interface ${1:ComponentName}Props {
+	${2:prop}: ${3:type};
+}
+
+export default function ${1:ComponentName}({ ${2:prop} }: ${1:ComponentName}Props) {
+	return (
+		<div>
+			${4:<h1>Component</h1>}
+		</div>
+	);
+}
+endsnippet
+
+snippet rafc "React Arrow Function Component (TS)" b
+interface ${1:ComponentName}Props {
+	${2:prop}: ${3:type};
+}
+
+const ${1:ComponentName}: React.FC<${1:ComponentName}Props> = ({ ${2:prop} }) => {
+	return (
+		<div>
+			${4:<h1>Component</h1>}
+		</div>
+	);
+};
+
+export default ${1:ComponentName};
+endsnippet
+
+snippet usestate "useState hook (TS)" b
+const [${1:state}, set${1/(.)/\U$1/}] = useState<${2:type}>(${3:initialValue});
+endsnippet
+
+snippet useeffect "useEffect hook" b
+useEffect(() => {
+	${1:// Effect code}
+}, [${2:dependencies}]);
+endsnippet
+
+snippet interface "TypeScript Interface" b
+interface ${1:InterfaceName} {
+	${2:property}: ${3:type};
+}
+endsnippet
+
+snippet type "TypeScript Type" b
+type ${1:TypeName} = {
+	${2:property}: ${3:type};
+};
+endsnippet
+
+snippet imp "Import statement" b
+import ${1:name} from '${2:module}';
+endsnippet
+
+snippet impa "Import as statement" b
+import ${1:name} as ${2:alias} from '${3:module}';
+endsnippet
+
+snippet exp "Export default" b
+export default ${1:name};
+endsnippet
+
+snippet const "Const declaration" b
+const ${1:name}: ${2:type} = ${3:value};
+endsnippet
+
+snippet func "Function declaration" b
+function ${1:name}(${2:params}: ${3:types}): ${4:returnType} {
+	${5:// Function body}
+}
+endsnippet
+
+snippet arr "Arrow function" b
+const ${1:name} = (${2:params}: ${3:types}): ${4:returnType} => {
+	${5:// Function body}
+};
+endsnippet
