@@ -244,7 +244,8 @@ opt.diffopt = {
 -- https://www.reddit.com/r/neovim/comments/1myfvla/comment/najy4s3/
 opt.diffopt:append("inline:char")
 
-opt.wrap = false -- Do not wrap
+opt.wrap = true -- Wrap long lines visually
+opt.breakindent = true -- Indent wrapped lines to match first line
 opt.ruler = false
 
 opt.showcmdloc = "statusline"
