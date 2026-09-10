@@ -48,3 +48,10 @@ require("bufferline").setup {
 vim.keymap.set("n", "<space>bp", "<cmd>BufferLinePick<CR>", {
   desc = "pick a buffer",
 })
+
+-- Jump directly to buffer by number (Alt+1..9), VSCode/browser style
+for i = 1, 9 do
+  vim.keymap.set("n", "<A-" .. i .. ">", "<cmd>BufferLineGoToBuffer " .. i .. "<CR>", {
+    desc = "go to buffer " .. i,
+  })
+end

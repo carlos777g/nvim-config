@@ -35,6 +35,12 @@ keymap.set("n", [[\db]], "<cmd>bprevious <bar> bdelete #<cr>", {
   desc = "Delete current buffer",
 })
 
+-- Close current buffer
+keymap.set("n", "<C-q>", "<cmd>bdelete<cr>", {
+  silent = true,
+  desc = "Close current buffer",
+})
+
 keymap.set("n", [[\dB]], function()
   local buf_ids = vim.api.nvim_list_bufs()
   local cur_buf = vim.api.nvim_win_get_buf(0)
@@ -173,6 +179,20 @@ keymap.set("n", "<left>", "<c-w>h")
 keymap.set("n", "<Right>", "<C-W>l")
 keymap.set("n", "<Up>", "<C-W>k")
 keymap.set("n", "<Down>", "<C-W>j")
+
+-- Move current window to a screen edge (i3-style Alt+Shift+hjkl)
+keymap.set("n", "<A-H>", "<C-w>H", { desc = "move window to far left" })
+keymap.set("n", "<A-J>", "<C-w>J", { desc = "move window to bottom" })
+keymap.set("n", "<A-K>", "<C-w>K", { desc = "move window to top" })
+keymap.set("n", "<A-L>", "<C-w>L", { desc = "move window to far right" })
+
+-- Resize current window (hold to repeat)
+keymap.set("n", "<C-Up>", "<cmd>resize +3<cr>", { desc = "increase window height" })
+keymap.set("n", "<C-Down>", "<cmd>resize -3<cr>", { desc = "decrease window height" })
+keymap.set("n", "<C-Left>", "<cmd>vertical resize -3<cr>", { desc = "decrease window width" })
+keymap.set("n", "<C-Right>", "<cmd>vertical resize +3<cr>", { desc = "increase window width" })
+keymap.set("n", "<C-h>", "<cmd>resize -3<cr>", { desc = "decrease window height" })
+keymap.set("n", "<C-l>", "<cmd>resize +3<cr>", { desc = "increase window height" })
 
 -- Text objects for URL
 keymap.set({ "x", "o" }, "iu", "<cmd>call text_obj#URL()<cr>", { desc = "URL text object" })
