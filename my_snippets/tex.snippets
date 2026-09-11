@@ -1,9 +1,473 @@
+# Document class and setup
+snippet doc "LaTeX document template" b
+\documentclass[${1:12pt,a4paper}]{${2:article}}
+\usepackage[utf-8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{${3:Título del Documento}}
+\author{${4:Autor}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{${5:Introducción}}
+$0
+
+\end{document}
+endsnippet
+
+# Packages
 snippet use "usepackage" b
 \usepackage{${1:package}}
 endsnippet
 
-snippet eqa "equation environment" b
-\begin{equation}\label{$1}
-	$2
+snippet use[] "usepackage with options" b
+\usepackage[${1:options}]{${2:package}}
+endsnippet
+
+# Document structure
+snippet sec "Section" b
+\section{${1:Section Title}}
+$0
+endsnippet
+
+snippet sec* "Section without numbering" b
+\section*{${1:Section Title}}
+$0
+endsnippet
+
+snippet subsec "Subsection" b
+\subsection{${1:Subsection Title}}
+$0
+endsnippet
+
+snippet subsec* "Subsection without numbering" b
+\subsection*{${1:Subsection Title}}
+$0
+endsnippet
+
+snippet subsubsec "Subsubsection" b
+\subsubsection{${1:Subsubsection Title}}
+$0
+endsnippet
+
+snippet chapter "Chapter" b
+\chapter{${1:Chapter Title}}
+$0
+endsnippet
+
+# Math environments
+snippet eqa "Equation environment" b
+\begin{equation}\label{eq:${1:label}}
+	${2:equation}
 \end{equation}
+$0
+endsnippet
+
+snippet eqn "Equation without number" b
+\begin{equation*}
+	${1:equation}
+\end{equation*}
+$0
+endsnippet
+
+snippet align "Align environment" b
+\begin{align*}
+	${1:equation1} \\
+	${2:equation2}
+\end{align*}
+$0
+endsnippet
+
+snippet align[] "Align environment with numbering" b
+\begin{align}\label{eq:${1:label}}
+	${2:equation1} \\
+	${3:equation2}
+\end{align}
+$0
+endsnippet
+
+snippet gather "Gather environment" b
+\begin{gather*}
+	${1:equation1} \\
+	${2:equation2}
+\end{gather*}
+$0
+endsnippet
+
+snippet frac "Fraction" i
+\frac{${1:numerator}}{${2:denominator}}
+endsnippet
+
+snippet sqrt "Square root" i
+\sqrt{${1:expression}}
+endsnippet
+
+snippet sqrt[] "N-th root" i
+\sqrt[${1:n}]{${2:expression}}
+endsnippet
+
+snippet sub "Subscript" i
+_{${1:subscript}}
+endsnippet
+
+snippet sup "Superscript" i
+^{${1:superscript}}
+endsnippet
+
+# Matrix
+snippet matrix "Matrix environment" b
+\begin{${1:matrix}}
+	${2:a} & ${3:b} \\
+	${4:c} & ${5:d}
+\end{$1}
+$0
+endsnippet
+
+snippet pmatrix "Parenthesis matrix" b
+\begin{pmatrix}
+	${1:a} & ${2:b} \\
+	${3:c} & ${4:d}
+\end{pmatrix}
+$0
+endsnippet
+
+snippet bmatrix "Bracket matrix" b
+\begin{bmatrix}
+	${1:a} & ${2:b} \\
+	${3:c} & ${4:d}
+\end{bmatrix}
+$0
+endsnippet
+
+# Text formatting
+snippet textbf "Bold text" i
+\textbf{${1:text}}
+endsnippet
+
+snippet textit "Italic text" i
+\textit{${1:text}}
+endsnippet
+
+snippet texttt "Typewriter text" i
+\texttt{${1:text}}
+endsnippet
+
+snippet textsc "Small caps" i
+\textsc{${1:text}}
+endsnippet
+
+snippet textcolor "Colored text" i
+\textcolor{${1:color}}{${2:text}}
+endsnippet
+
+snippet emph "Emphasized text" i
+\emph{${1:text}}
+endsnippet
+
+# Lists
+snippet itemize "Itemize list" b
+\begin{itemize}
+	\item ${1:First item}
+	\item ${2:Second item}
+\end{itemize}
+$0
+endsnippet
+
+snippet enumerate "Enumerate list" b
+\begin{enumerate}
+	\item ${1:First item}
+	\item ${2:Second item}
+\end{enumerate}
+$0
+endsnippet
+
+snippet description "Description list" b
+\begin{description}
+	\item[${1:Label}] ${2:Description}
+\end{description}
+$0
+endsnippet
+
+snippet item "List item" b
+\item ${1:item text}
+endsnippet
+
+# References and labels
+snippet label "Label" b
+\label{${1:label}}
+endsnippet
+
+snippet ref "Reference" i
+\ref{${1:label}}
+endsnippet
+
+snippet eqref "Equation reference" i
+\eqref{${1:label}}
+endsnippet
+
+snippet cite "Citation" i
+\cite{${1:citation}}
+endsnippet
+
+# Figures and tables
+snippet figure "Figure environment" b
+\begin{figure}[${1:h}]
+	\centering
+	\includegraphics[width=${2:0.8\textwidth}]{${3:image.png}}
+	\caption{${4:Caption}}
+	\label{fig:${5:label}}
+\end{figure}
+$0
+endsnippet
+
+snippet table "Table environment" b
+\begin{table}[${1:h}]
+	\centering
+	\caption{${2:Table caption}}
+	\label{tab:${3:label}}
+	\begin{tabular}{${4:c|c}}
+		\hline
+		${5:Header 1} & ${6:Header 2} \\
+		\hline
+		${7:data} & ${8:data} \\
+		\hline
+	\end{tabular}
+\end{table}
+$0
+endsnippet
+
+snippet tabular "Tabular environment" b
+\begin{tabular}{${1:c|c}}
+	\hline
+	${2:Header 1} & ${3:Header 2} \\
+	\hline
+	${4:data} & ${5:data} \\
+	\hline
+\end{tabular}
+$0
+endsnippet
+
+snippet includegraphics "Include graphics" b
+\includegraphics[width=${1:0.8\textwidth}]{${2:image.png}}
+endsnippet
+
+# Miscellaneous
+snippet todo "TODO note" b
+\textcolor{red}{\textbf{TODO: ${1:note}}}
+endsnippet
+
+snippet comment "Comment" b
+% ${1:comment}
+endsnippet
+
+snippet multiline "Multiline comment" b
+\begin{comment}
+${1:multiline comment}
+\end{comment}
+endsnippet
+
+snippet verbatim "Verbatim environment" b
+\begin{verbatim}
+${1:code}
+\end{verbatim}
+endsnippet
+
+snippet code "Inline code" i
+\verb|${1:code}|
+endsnippet
+
+snippet href "Hyperlink" i
+\href{${1:url}}{${2:text}}
+endsnippet
+
+snippet footnote "Footnote" i
+\footnote{${1:footnote text}}
+endsnippet
+
+snippet index "Index entry" i
+\index{${1:entry}}
+endsnippet
+
+# Greek letters
+snippet alpha "Alpha" i
+\alpha
+endsnippet
+
+snippet beta "Beta" i
+\beta
+endsnippet
+
+snippet gamma "Gamma" i
+\gamma
+endsnippet
+
+snippet delta "Delta" i
+\delta
+endsnippet
+
+snippet epsilon "Epsilon" i
+\epsilon
+endsnippet
+
+snippet zeta "Zeta" i
+\zeta
+endsnippet
+
+snippet theta "Theta" i
+\theta
+endsnippet
+
+snippet lambda "Lambda" i
+\lambda
+endsnippet
+
+snippet mu "Mu" i
+\mu
+endsnippet
+
+snippet nu "Nu" i
+\nu
+endsnippet
+
+snippet pi "Pi" i
+\pi
+endsnippet
+
+snippet rho "Rho" i
+\rho
+endsnippet
+
+snippet sigma "Sigma" i
+\sigma
+endsnippet
+
+snippet tau "Tau" i
+\tau
+endsnippet
+
+snippet phi "Phi" i
+\phi
+endsnippet
+
+snippet psi "Psi" i
+\psi
+endsnippet
+
+snippet omega "Omega" i
+\omega
+endsnippet
+
+# Math operators and symbols
+snippet cdot "Centered dot" i
+\cdot
+endsnippet
+
+snippet times "Multiplication" i
+\times
+endsnippet
+
+snippet div "Division symbol" i
+\div
+endsnippet
+
+snippet pm "Plus-minus" i
+\pm
+endsnippet
+
+snippet mp "Minus-plus" i
+\mp
+endsnippet
+
+snippet infty "Infinity" i
+\infty
+endsnippet
+
+snippet sum "Summation" i
+\sum_{${1:i=1}}^{${2:n}}
+endsnippet
+
+snippet prod "Product" i
+\prod_{${1:i=1}}^{${2:n}}
+endsnippet
+
+snippet int "Integral" i
+\int_{${1:a}}^{${2:b}} ${3:f(x)} \, dx
+endsnippet
+
+snippet lim "Limit" i
+\lim_{${1:x \to 0}} ${2:f(x)}
+endsnippet
+
+snippet le "Less than or equal" i
+\leq
+endsnippet
+
+snippet ge "Greater than or equal" i
+\geq
+endsnippet
+
+snippet approx "Approximately equal" i
+\approx
+endsnippet
+
+snippet neq "Not equal" i
+\neq
+endsnippet
+
+snippet in "In set" i
+\in
+endsnippet
+
+snippet notin "Not in set" i
+\notin
+endsnippet
+
+snippet cup "Union" i
+\cup
+endsnippet
+
+snippet cap "Intersection" i
+\cap
+endsnippet
+
+snippet subset "Subset" i
+\subset
+endsnippet
+
+snippet subseteq "Subset or equal" i
+\subseteq
+endsnippet
+
+snippet forall "For all" i
+\forall
+endsnippet
+
+snippet exists "There exists" i
+\exists
+endsnippet
+
+snippet rightarrow "Right arrow" i
+\rightarrow
+endsnippet
+
+snippet leftarrow "Left arrow" i
+\leftarrow
+endsnippet
+
+snippet leftrightarrow "Left-right arrow" i
+\leftrightarrow
+endsnippet
+
+snippet implies "Implies" i
+\Rightarrow
+endsnippet
+
+snippet iff "If and only if" i
+\Leftrightarrow
 endsnippet

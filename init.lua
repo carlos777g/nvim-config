@@ -11,6 +11,9 @@
 -- StackOverflow: https://stackoverflow.com/users/6064933/jdhao
 local utils = require("utils")
 
+-- Enable syntax highlighting by default
+vim.cmd("syntax on")
+
 vim.loader.enable()
 
 local expected_version = "0.12.5"
@@ -39,3 +42,6 @@ require("diagnostic-conf")
 
 -- colorscheme settings
 require("ui")
+
+-- LaTeX configuration
+require("config.tex")
